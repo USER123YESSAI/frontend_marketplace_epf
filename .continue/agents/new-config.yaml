@@ -1,0 +1,18 @@
+# Configuration locale pour LM Studio et Qwen 2.5 Coder
+name: Local Config
+version: 1.0.0
+schema: v1
+
+# Définition de ton modèle local unique
+models:
+  - name: qwen2.5-coder 7b
+    provider: lmstudio
+    model: qwen2.5-coder-7b-instruct
+    apiBase: http://localhost:1234/v1
+
+# Modèle utilisé pour l'auto-complétion en temps réel (Inline Completion)
+tabAutocompleteModel:
+  name: Qwen 2.5 Coder Autocomplete
+  provider: lmstudio
+  model: qwen2.5-coder-7b-instruct
+  apiBase: http://localhost:1234/v1
