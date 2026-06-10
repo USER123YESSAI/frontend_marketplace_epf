@@ -5,7 +5,6 @@ Frontend React pour la plateforme **EPF Marketplace**, connecté à l'API REST L
 ## Prérequis
 
 - Node.js 20+
-- Backend Laravel en cours d'exécution ([epf-marketplace](https://github.com/libasseld/epf-marketplace))
 
 ## Installation
 
