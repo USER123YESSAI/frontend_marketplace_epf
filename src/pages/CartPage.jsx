@@ -82,6 +82,11 @@ function CartContent() {
                 +
               </button>
             </div>
+            {item.product?.quantity !== undefined && Number(item.product.quantity) < item.quantity && (
+              <p className="text-xs font-semibold text-red-600">
+                Stock insuffisant : disponible {item.product.quantity}
+              </p>
+            )}
             <p className="font-semibold text-indigo-600">{formatPrice(item.subtotal)}</p>
             <button
               type="button"

@@ -29,8 +29,8 @@ export function CartProvider({ children }) {
   }, [isAuthenticated]);
 
   useEffect(() => {
-    fetchCart();
-  }, [fetchCart]);
+    if (isAuthenticated) fetchCart();
+  }, [fetchCart, isAuthenticated]);
 
   const itemCount =
     cart?.items_count ??

@@ -55,7 +55,12 @@ function ProductForm() {
       });
       if (data.image?.[0]) formData.append('image', data.image[0]);
       if (data.images) {
-        Array.from(data.images).forEach((file) => formData.append('images[]', file));
+        const files = Array.from(data.images);
+        const maxImages = 10;
+        if (files.length > maxImages) {
+          toast.error(`Trop d’images (max ${maxImages}). Seules les ${maxImages} premières seront envoyées.`);
+        }
+        files.slice(0, maxImages).forEach((file) => formData.append('images[]', file));
       }
 
       if (isEdit) {

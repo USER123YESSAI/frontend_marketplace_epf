@@ -64,9 +64,9 @@ function AdminUsers() {
         <div className="flex justify-center py-20"><LoadingSpinner size="lg" /></div>
       ) : (
         <>
-          <div className="overflow-x-auto rounded-xl border bg-white">
+          <div className="overflow-x-auto rounded-xl bg-white">
             <table className="w-full text-left text-sm">
-              <thead className="border-b bg-slate-50">
+              <thead className="bg-slate-50">
                 <tr>
                   <th className="p-3">Nom</th>
                   <th className="p-3">Email</th>
@@ -77,7 +77,7 @@ function AdminUsers() {
               </thead>
               <tbody>
                 {users.map((u) => (
-                  <tr key={u.id} className="border-b">
+                  <tr key={u.id} className="">
                     <td className="p-3">{u.name}</td>
                     <td className="p-3">{u.email}</td>
                     <td className="p-3">{u.role}</td>

@@ -81,9 +81,9 @@ function AdminProducts() {
         <p className="text-slate-500">Aucun produit trouvé.</p>
       ) : (
         <>
-          <div className="overflow-x-auto rounded-xl border bg-white">
+          <div className="overflow-x-auto rounded-xl bg-white">
             <table className="w-full text-left text-sm">
-              <thead className="border-b bg-slate-50">
+              <thead className="bg-slate-50">
                 <tr>
                   <th className="p-3">Produit</th>
                   <th className="p-3">Prix</th>
@@ -94,7 +94,7 @@ function AdminProducts() {
               </thead>
               <tbody>
                 {products.map((p) => (
-                  <tr key={p.id} className="border-b">
+                  <tr key={p.id} className="">
                     <td className="p-3">
                       <div className="flex items-center gap-3">
                         {p.image && <ProductImage src={p.image} alt="" className="h-10 w-10 rounded object-cover" />}

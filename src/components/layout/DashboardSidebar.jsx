@@ -23,7 +23,7 @@ export default function DashboardSidebar({ title, subtitle, accentColor = '#6366
       {/* ── Desktop Sidebar ── */}
       <aside className="dashboard-sidebar" style={{
         width: 240, flexShrink: 0, position: 'sticky', top: 24,
-        background: 'white', borderRadius: 16, border: '1.5px solid var(--border)',
+        background: 'white', borderRadius: 16,
         boxShadow: 'var(--shadow-sm)', overflow: 'hidden',
         display: 'flex', flexDirection: 'column', maxHeight: 'calc(100vh - 48px)'
       }}>
@@ -63,10 +63,10 @@ export default function DashboardSidebar({ title, subtitle, accentColor = '#6366
             </div>
           </div>
           <button onClick={logout} style={{
-            width: '100%', padding: '7px 12px', borderRadius: 8, border: '1.5px solid var(--border)',
+            width: '100%', padding: '7px 12px', borderRadius: 8,
             fontSize: 12, fontWeight: 600, cursor: 'pointer', background: 'white',
             color: '#64748b', fontFamily: 'inherit', display: 'flex', alignItems: 'center',
-            justifyContent: 'center', gap: 6, transition: 'all .15s'
+            justifyContent: 'center', gap: 6, transition: 'all .15s', border: 'none'
           }}
             onMouseEnter={e => { e.currentTarget.style.background = '#fef2f2'; e.currentTarget.style.color = '#ef4444'; e.currentTarget.style.borderColor = '#fca5a5'; }}
             onMouseLeave={e => { e.currentTarget.style.background = 'white'; e.currentTarget.style.color = '#64748b'; e.currentTarget.style.borderColor = 'var(--border)'; }}
@@ -81,7 +81,7 @@ export default function DashboardSidebar({ title, subtitle, accentColor = '#6366
         </div>
       </aside>
 
-      {/* ── Mobile nav (pills horizontales) ── */}
+      {/* ── Mobile nav ── */}
       <nav className="dashboard-mobile-nav" style={{
         display: 'none', gap: 6, overflowX: 'auto', paddingBottom: 4,
         marginBottom: 8, WebkitOverflowScrolling: 'touch',

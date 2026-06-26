@@ -36,4 +36,3 @@ export default function SellerLayout() {
     </ProtectedRoute>
   );
 }
-// Note: la route messages est ajoutée dans App.jsx

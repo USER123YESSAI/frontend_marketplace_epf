@@ -3,7 +3,7 @@ import axios from 'axios';
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
 export const BACKEND_URL = (import.meta.env.VITE_BACKEND_URL || API_URL.replace(/\/api\/?$/, '')).replace(/\/$/, '');
 
-/** Convertit les URLs médias renvoyées par l'API (souvent http://localhost/storage/...) en URL accessible. */
+/** Convertit les URLs médias renvoyées par l'API en URL accessible. */
 export function resolveMediaUrl(url) {
   if (!url || typeof url !== 'string') return null;
   if (url.startsWith('blob:') || url.startsWith('data:')) return url;
@@ -25,7 +25,7 @@ export function resolveMediaUrl(url) {
     return `${BACKEND_URL}/${url}`;
   }
 
-  // Corrige http://localhost/... sans port alors que le backend tourne sur :8000
+
   if (url.startsWith('http://localhost/') && BACKEND_URL.includes(':8000')) {
     return url.replace('http://localhost/', `${BACKEND_URL}/`);
   }

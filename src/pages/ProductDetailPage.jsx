@@ -156,7 +156,7 @@ export default function ProductDetailPage() {
           </div>
 
           {/* Section des boutons d'action */}
-          {isAuthenticated && (user?.role === 'buyer' || user?.role === 'admin') && (
+          {isAuthenticated && user?.role === 'buyer' && (
             <div className="mt-6 space-y-3">
               <div className="flex items-center gap-3">
                 <input

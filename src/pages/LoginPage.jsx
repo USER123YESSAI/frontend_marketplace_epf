@@ -22,7 +22,11 @@ export default function LoginPage() {
       const target = role === 'admin' ? '/admin' : role === 'seller' ? '/seller' : '/buyer';
       navigate(target, { replace: true });
     } catch (error) {
-      toast.error(getErrorMessage(error));
+      if (error?.response?.status === 403) {
+        toast.error('Compte suspendu. Contactez le support.');
+      } else {
+        toast.error(getErrorMessage(error));
+      }
     } finally {
       setSubmitting(false);
     }

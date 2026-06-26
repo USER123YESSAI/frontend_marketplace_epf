@@ -22,9 +22,16 @@ function CheckoutForm() {
       toast.error('Votre panier est vide');
       return;
     }
+
     setSubmitting(true);
     try {
-      const { data: res } = await orderService.create(data);
+      // Le backend Laravel génère les order_items depuis le panier de l'utilisateur connecté.
+      // On n'envoie donc pas de champ `items`.
+      const orderPayload = {
+        ...data,
+      };
+
+      const { data: res } = await orderService.create(orderPayload);
       await fetchCart();
       toast.success(res.message || 'Commande créée');
       navigate(`/buyer/orders/${res.order.id}`);

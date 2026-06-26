@@ -112,7 +112,8 @@ export default function HomePage() {
 
         <div style={{ position: 'relative', maxWidth: 580 }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '4px 14px', borderRadius: 99, fontSize: 12, fontWeight: 600, background: 'rgba(255,255,255,.12)', color: '#c4b5fd', marginBottom: 24, border: '1px solid rgba(255,255,255,.15)' }}>
-            ✦ Marketplace EPF Africa — Bachelor CSI 3
+            ✦ Marketplace EPF Africa 
+            
           </span>
           <h1 style={{ fontSize: 44, fontWeight: 800, color: 'white', margin: '0 0 18px', lineHeight: 1.1, letterSpacing: '-0.5px' }}>
             Achetez, vendez,<br />

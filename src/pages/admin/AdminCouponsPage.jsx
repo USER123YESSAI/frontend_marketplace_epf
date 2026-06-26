@@ -143,9 +143,9 @@ function AdminCoupons() {
       {loading ? (
         <div className="flex justify-center py-12"><LoadingSpinner size="lg" /></div>
       ) : (
-        <div className="overflow-x-auto rounded-xl border bg-white">
+        <div className="overflow-x-auto rounded-xl bg-white">
           <table className="w-full text-left text-sm">
-            <thead className="border-b bg-slate-50">
+            <thead className="bg-slate-50">
               <tr>
                 <th className="p-3">Code</th>
                 <th className="p-3">Type</th>
@@ -157,11 +157,11 @@ function AdminCoupons() {
             </thead>
             <tbody>
               {coupons.map((c) => (
-                <tr key={c.id} className="border-b">
+                <tr key={c.id} className="">
                   <td className="p-3 font-mono font-medium">{c.code}</td>
                   <td className="p-3">{c.type}</td>
                   <td className="p-3">{c.value}{c.type === 'percent' ? '%' : '€'}</td>
-                  <td className="p-3">{formatDate(c.expires_at)}</td>
+                  <td className="p-3">{formatDate(c.ends_at)}</td>
                   <td className="p-3">{c.is_active ? 'Oui' : 'Non'}</td>
                   <td className="p-3">
                     <button type="button" onClick={() => handleEdit(c)} className="mr-2 text-indigo-600 hover:underline">Modifier</button>

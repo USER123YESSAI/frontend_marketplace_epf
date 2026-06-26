@@ -9,11 +9,6 @@ export const productService = {
   isFavorite: (id) => api.get(`/products/${id}/is-favorite`),
   getMyProducts: (params) => api.get('/products/my-products', { params }),
   create: (formData) => api.post('/products', formData),
-  update: (id, formData) => {
-    if (!formData.has('_method')) {
-      formData.append('_method', 'PUT');
-    }
-    return api.post(`/products/${id}`, formData);
-  },
+  update: (id, formData) => api.put(`/products/${id}`, formData),
   delete: (id) => api.delete(`/products/${id}`),
 };

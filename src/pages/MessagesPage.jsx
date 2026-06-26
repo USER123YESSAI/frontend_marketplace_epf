@@ -160,11 +160,11 @@ function MessagesContent() {
     load();
     setLoadingMsgs(false);
 
-    // Polling toutes les 5s pour voir les nouveaux messages
+    // Polling (réduit) pour limiter la charge serveur
     pollingRef.current = setInterval(() => {
       load();
       loadConversations();
-    }, 5000);
+    }, 15000);
 
     return () => clearInterval(pollingRef.current);
   }, [selectedUser?.id, scrollToBottom, loadConversations]);
