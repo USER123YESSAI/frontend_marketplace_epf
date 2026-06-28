@@ -20,7 +20,20 @@ function ProductForm() {
   });
 
   useEffect(() => {
-    categoryService.getAll().then(({ data }) => setCategories(data.data || data || []));
+    let cancelled = false;
+    categoryService
+      .getAll()
+      .then(({ data }) => {
+        const payload = data?.data ?? data;
+        if (!cancelled) setCategories(Array.isArray(payload) ? payload : []);
+      })
+      .catch((err) => {
+        toast.error(getErrorMessage(err));
+        if (!cancelled) setCategories([]);
+      });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   useEffect(() => {
